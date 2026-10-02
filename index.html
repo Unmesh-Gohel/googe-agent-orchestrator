@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Agent Orchestrator</title>
+    <meta name="description" content="Centralized orchestrator and oversight dashboard for Google agent ecosystem across Gmail, Calendar, Drive, Docs, Sheets, News, Ads, Vids, Slides, and YouTube." />
+    <meta property="og:title" content="Google Agent Orchestrator" />
+    <meta property="og:description" content="Centralized orchestrator and oversight dashboard for Google agent ecosystem across Gmail, Calendar, Drive, Docs, Sheets, News, Ads, Vids, Slides, and YouTube." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        try {
+          var stored = localStorage.getItem('agent_orchestrator_theme');
+          var isDark = stored === 'dark' || (!stored && (!window.matchMedia || window.matchMedia('(prefers-color-scheme: dark)').matches));
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+            document.documentElement.setAttribute('data-theme', 'light');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-blue-500/20 selection:text-blue-600 dark:selection:text-blue-300 min-h-screen transition-colors duration-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

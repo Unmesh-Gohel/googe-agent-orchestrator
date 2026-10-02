@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-slate-850: #172033;
+}
+
+/* Light Mode Theme Overrides */
+html:not(.dark),
+[data-theme="light"] {
+  color-scheme: light;
+  --color-slate-950: #f8fafc;
+  --color-slate-900: #ffffff;
+  --color-slate-850: #f1f5f9;
+  --color-slate-800: #e2e8f0;
+  --color-slate-700: #cbd5e1;
+  --color-slate-600: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-400: #64748b;
+  --color-slate-300: #475569;
+  --color-slate-200: #334155;
+  --color-slate-100: #0f172a;
+}
+
+/* Dark Mode Theme */
+html.dark,
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+@layer base {
+  body {
+    transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
